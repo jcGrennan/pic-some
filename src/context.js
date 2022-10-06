@@ -2,9 +2,9 @@ import {createContext} from "react";
 
 const Context = createContext() 
 
-function ContextProvider() {
+function ContextProvider({children}) {
     return (
-        <Context.Provider value=""></Context.Provider>
+        <Context.Provider value="">{children}</Context.Provider>
     )
 }
 
