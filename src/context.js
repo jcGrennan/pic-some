@@ -1,11 +1,13 @@
 import {createContext, useState} from "react";
 
 const Context = createContext() 
-const [photos, setPhotos] = useState()
 
 function ContextProvider({children}) {
+
+    const [photos, setPhotos] = useState()
+
     return (
-        <Context.Provider value={photos}>{children}</Context.Provider>
+        <Context.Provider value={{photos, setPhotos}}>{children}</Context.Provider>
     )
 }
 
