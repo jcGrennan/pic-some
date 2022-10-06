@@ -1,4 +1,4 @@
-function Image({className}) {
+function Image({className, img}) {
 
     function getClassName(i) {
         if(i % 5 === 0) {
@@ -11,7 +11,7 @@ function Image({className}) {
 
     return (
         <div className={`${getClassName(className)} image-container`}>
-            <img src={""} className="image-grid" />
+            <img alt="product photos" src={img.url} className="image-grid" />
         </div>
     )
 }
