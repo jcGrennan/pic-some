@@ -6,9 +6,9 @@ import Image from "../components/Image"
 
 function Photos() {
 
-    const photosArray = useContext(Context).photos
+    const {photos} = useContext(Context)
    
-    const photoGrid = photosArray.map(photo => (
+    const photoGrid = photos.map(photo => (
         <Image key={photo.id} img={photo} className={photo.id - 1} />
     ))
 
