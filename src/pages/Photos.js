@@ -8,8 +8,8 @@ function Photos() {
 
     const {photos} = useContext(Context)
    
-    const photoGrid = photos.map(photo => (
-        <Image key={photo.id} img={photo} className={photo.id - 1} />
+    const photoGrid = photos.map((photo, i) => (
+        <Image key={photo.id} img={photo} className={i} />
     ))
 
     return (
