@@ -19,8 +19,8 @@ function Image({className, img}) {
 
     return (
         <div 
-            onMouseOver={handleHover}
-            onMouseOut={handleHover} 
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover} 
             className={`${getClassName(className)} image-container`}
         >
             <img alt="product photos" src={img.url} className="image-grid" />
