@@ -2,7 +2,11 @@ import {useState} from "react"
 
 function Image({className, img}) {
 
-    const [hover, setCover] = useState(false)
+    const [hovered, setHovered] = useState(false)
+
+    function handleHover() {
+        setHovered(prevState => !prevState)
+    }
 
     function getClassName(i) {
         if(i % 5 === 0) {
@@ -14,7 +18,11 @@ function Image({className, img}) {
     } 
 
     return (
-        <div className={`${getClassName(className)} image-container`}>
+        <div 
+            onMouseOver={handleHover}
+            onMouseOut={handleHover} 
+            className={`${getClassName(className)} image-container`}
+        >
             <img alt="product photos" src={img.url} className="image-grid" />
         </div>
     )
