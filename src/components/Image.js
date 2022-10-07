@@ -1,4 +1,8 @@
+import {useState} from "react"
+
 function Image({className, img}) {
+
+    const [hover, setCover] = useState(false)
 
     function getClassName(i) {
         if(i % 5 === 0) {
