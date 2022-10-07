@@ -4,7 +4,7 @@ const Context = createContext()
 
 function ContextProvider({children}) {
 
-    const [photos, setPhotos] = useState()
+    const [photos, setPhotos] = useState([])
 
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
