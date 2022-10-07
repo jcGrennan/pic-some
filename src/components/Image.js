@@ -23,6 +23,8 @@ function Image({className, img}) {
             onMouseLeave={handleHover} 
             className={`${getClassName(className)} image-container`}
         >
+            {hovered && <i className="ri-heart-line favorite"></i>}
+            {hovered && <i className="ri-add-circle-line cart"></i>}
             <img alt="product photos" src={img.url} className="image-grid" />
         </div>
     )
