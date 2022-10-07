@@ -4,6 +4,9 @@ function Image({className, img}) {
 
     const [hovered, setHovered] = useState(false)
 
+    const heartIcon = hovered && <i className="ri-heart-line favorite"></i>
+    const cartIcon = hovered && <i className="ri-add-circle-line cart"></i>
+
     function handleHover() {
         setHovered(prevState => !prevState)
     }
@@ -23,9 +26,9 @@ function Image({className, img}) {
             onMouseLeave={handleHover} 
             className={`${getClassName(className)} image-container`}
         >
-            {hovered && <i className="ri-heart-line favorite"></i>}
-            {hovered && <i className="ri-add-circle-line cart"></i>}
-            <img alt="product photos" src={img.url} className="image-grid" />
+           <img alt="product photos" src={img.url} className="image-grid" />
+           {heartIcon}
+           {cartIcon}
         </div>
     )
 }
