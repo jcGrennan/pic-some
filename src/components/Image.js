@@ -8,6 +8,8 @@ function Image({className, img}) {
     const {toggleFavorite} = useContext(Context)
 
     const heartIcon = hovered && <i onClick={()=> toggleFavorite(img.id)} className="ri-heart-line favorite"></i>
+    const filledHeart = img.isFavorite && <i onClick={()=> toggleFavorite(img.id)} className="ri-heart-fill favorite"></i>
+    
     const cartIcon = hovered && <i className="ri-add-circle-line cart"></i>
 
     function handleHover() {
@@ -30,7 +32,7 @@ function Image({className, img}) {
             className={`${getClassName(className)} image-container`}
         >
            <img alt="product photos" src={img.url} className="image-grid" />
-           {heartIcon}
+           {heartIcon} {filledHeart}
            {cartIcon}
         </div>
     )
