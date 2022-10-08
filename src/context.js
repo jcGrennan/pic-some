@@ -18,7 +18,7 @@ function ContextProvider({children}) {
                 photo.id === id ? 
                     {
                         ...photo, 
-                        isFavorited: !photo.isFavorited
+                        isFavorite: !photo.isFavorite
                     } :
                     photo
             ))
