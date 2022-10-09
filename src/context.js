@@ -26,8 +26,14 @@ function ContextProvider({children}) {
         ))
     }
 
+    function addToCart(img) {
+        setCartItems(prevCart => [...prevCart, img])
+    }
+
     return (
-        <Context.Provider value={{photos, toggleFavorite, cartItems}}>{children}</Context.Provider>
+        <Context.Provider value={{photos, toggleFavorite, cartItems, addToCart}}>
+            {children}
+        </Context.Provider>
     )
 }
 
