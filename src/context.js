@@ -7,7 +7,6 @@ function ContextProvider({children}) {
     const [photos, setPhotos] = useState([])
     const [cartItems, setCartItems] = useState([])
 
-    console.log(cartItems)
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
             .then(res => res.json())
