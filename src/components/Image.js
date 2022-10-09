@@ -49,10 +49,10 @@ function Image({className, img}) {
 Image.propTypes = {
     className: PropTypes.string,
     img: PropTypes.shape({
-        id: PropTypes.string,
+        id: PropTypes.string.isRequired,
         isFavorite: PropTypes.bool,
-        url: PropTypes.string
-    }).isRequired
+        url: PropTypes.string.isRequired
+    })
 }
 
 export default Image
