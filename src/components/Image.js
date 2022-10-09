@@ -18,7 +18,7 @@ function Image({className, img}) {
             return "wide"
         }
     } 
-    
+
     const {toggleFavorite, addToCart} = useContext(Context)
 
     function handleHeart() {
@@ -49,7 +49,7 @@ function Image({className, img}) {
 }
 
 Image.propTypes = {
-    className: PropTypes.string,
+    className: PropTypes.number,
     img: PropTypes.shape({
         id: PropTypes.string.isRequired,
         isFavorite: PropTypes.bool,
