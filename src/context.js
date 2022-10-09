@@ -26,8 +26,8 @@ function ContextProvider({children}) {
         ))
     }
 
-    function addToCart(img) {
-        setCartItems(prevCart => [...prevCart, img])
+    function addToCart(newItem) {
+        setCartItems(prevCart => [...prevCart, newItem])
     }
 
     return (
