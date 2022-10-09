@@ -6,20 +6,6 @@ function Image({className, img}) {
 
     const [hovered, setHovered] = useState(false)
 
-    const {toggleFavorite} = useContext(Context)
-
-    function handleHeart() {
-        const handleClick = ()=> toggleFavorite(img.id)
-        
-        if(img.isFavorite) {
-            return <i onClick={handleClick} className="ri-heart-fill favorite"></i>
-        } else if(hovered) {
-            return <i onClick={handleClick} className="ri-heart-line favorite"></i>
-        }
-    }
-
-    const cartIcon = hovered && <i className="ri-add-circle-line cart"></i>
-
     function handleHover() {
         setHovered(prevState => !prevState)
     }
@@ -32,6 +18,22 @@ function Image({className, img}) {
             return "wide"
         }
     } 
+    
+    const {toggleFavorite, addToCart} = useContext(Context)
+
+    function handleHeart() {
+        const handleClick = ()=> toggleFavorite(img.id)
+        
+        if(img.isFavorite) {
+            return <i onClick={handleClick} className="ri-heart-fill favorite"></i>
+        } else if(hovered) {
+            return <i onClick={handleClick} className="ri-heart-line favorite"></i>
+        }
+    }
+
+    const cartIcon = hovered && 
+        <i onClick={() => addToCart(img)}className="ri-add-circle-line cart"></i>
+
 
     return (
         <div 
