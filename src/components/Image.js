@@ -32,7 +32,7 @@ function Image({className, img}) {
     }
 
     function handleCartIcon() {
-        if(cartItems.find(item => item === img)) {
+        if(cartItems.some(item => item.id === img.id)) {
             return <i className="ri-shopping-cart-fill cart"></i>
         } else if(hovered) {
             return <i onClick={() => addToCart(img)} className="ri-add-circle-line cart"></i>
