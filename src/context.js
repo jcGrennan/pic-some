@@ -30,11 +30,8 @@ function ContextProvider({children}) {
         setCartItems(prevCart => [...prevCart, newItem])
     }
 
-    function removeFromCart(deleted) {
-        setCartItems(prevCart => {
-            const newCart = prevCart.filter(item => item.id !== deleted.id)
-            return newCart
-        })
+    function removeFromCart(id) {
+        setCartItems(prevCart => prevCart.filter(item => item.id !== id))
     }
 
     return (
