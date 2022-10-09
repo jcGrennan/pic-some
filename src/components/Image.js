@@ -19,7 +19,12 @@ function Image({className, img}) {
         }
     } 
 
-    const {toggleFavorite, addToCart, cartItems} = useContext(Context)
+    const {
+        toggleFavorite, 
+        cartItems, 
+        addToCart, 
+        removeFromCart
+    } = useContext(Context)
 
     function handleHeart() {
         const handleClick = () => toggleFavorite(img.id)
@@ -33,7 +38,7 @@ function Image({className, img}) {
 
     function handleCartIcon() {
         if(cartItems.some(item => item.id === img.id)) {
-            return <i className="ri-shopping-cart-fill cart"></i>
+            return <i onClick={() => removeFromCart(img)} className="ri-shopping-cart-fill cart"></i>
         } else if(hovered) {
             return <i onClick={() => addToCart(img)} className="ri-add-circle-line cart"></i>
         }
