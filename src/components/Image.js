@@ -38,7 +38,7 @@ function Image({className, img}) {
 
     function handleCartIcon() {
         if(cartItems.some(item => item.id === img.id)) {
-            return <i onClick={() => removeFromCart(img)} className="ri-shopping-cart-fill cart"></i>
+            return <i onClick={() => removeFromCart(img.id)} className="ri-shopping-cart-fill cart"></i>
         } else if(hovered) {
             return <i onClick={() => addToCart(img)} className="ri-add-circle-line cart"></i>
         }
