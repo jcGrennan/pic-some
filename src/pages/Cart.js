@@ -9,11 +9,13 @@ function Cart() {
         <CartItem key={item.id} item={item} />
     ))
 
+    const total = (cartItemElements.length * 4.99).toLocaleString("en-IE", {style:"currency", currency:"EUR"})
+
     return (
         <main className="cart-page">
             <h1>Checkout</h1>
             {cartItemElements}
-            <p className="total-cost">Total: </p>
+            <p className="total-cost">Total: {total}</p>
             <div className="order-button">
                 <button>Place Order</button>
             </div>
