@@ -1,6 +1,10 @@
 function CartItem({item}) {
     return (
-        <h3>{item.id}</h3>
+        <div className="cart-item">
+            <i className="ri-delete-bin-line"></i>
+            <img src={item.url} width="130px" />
+            <p>€4.99</p>
+        </div>
     )
 }
 
