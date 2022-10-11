@@ -1,9 +1,10 @@
-import {useContext} from "react"
+import {useState, useContext} from "react"
 import {Context} from "../Context"
 import CartItem from "../components/CartItem"
 
 function Cart() {
 
+    const [isOrdering, SetIsOrdering] = useState(false)
     const {cartItems} = useContext(Context)
     const total = (cartItems.length * 4.99).toLocaleString("en-IE", {style:"currency", currency:"EUR"})
     
@@ -17,7 +18,10 @@ function Cart() {
             {cartItemElements}
             <p className="total-cost">Total: {total}</p>
             <div className="order-button">
-                <button>Place Order</button>
+                {isOrdering ? 
+                    <button>Ordering...</button> :
+                    <button>Place Order</button>
+                }
             </div>
         </main>
     )
