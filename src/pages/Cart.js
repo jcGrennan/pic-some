@@ -29,7 +29,7 @@ function Cart() {
             <p className="total-cost">Total: {total}</p>
             <div className="order-button">
                 {isOrdering && <button disabled={true}>Ordering...</button>}
-                {cartItems.length > 0 && <button onClick={placeOrder}>Place Order</button>}
+                {cartItems.length > 0 && !isOrdering && <button onClick={placeOrder}>Place Order</button>}
             </div>
         </main>
     )
