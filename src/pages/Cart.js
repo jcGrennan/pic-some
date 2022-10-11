@@ -19,7 +19,7 @@ function Cart() {
             <p className="total-cost">Total: {total}</p>
             <div className="order-button">
                 {isOrdering ? 
-                    <button>Ordering...</button> :
+                    <button disabled={true}>Ordering...</button> :
                     <button>Place Order</button>
                 }
             </div>
