@@ -14,7 +14,7 @@ function CartItem({item}) {
                 onClick={() => removeFromCart(item.id)} 
                 className={`ri-delete-bin-${iconClass}`}
             ></i>
-            <img src={item.url} width="130px" />
+            <img alt="cart item" src={item.url} width="130px" />
             <p>€4.99</p>
         </div>
     )
