@@ -1,4 +1,4 @@
-import {useState, useContext} from "react"
+import {useContext} from "react"
 import {Context} from "../Context"
 import PropTypes from "prop-types"
 import useHover from "../hooks/useHover"
