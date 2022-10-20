@@ -1,14 +1,11 @@
 import {useState, useContext} from "react"
 import {Context} from "../Context"
 import PropTypes from "prop-types"
+import useHover from "../hooks/useHover"
 
 function Image({className, img}) {
 
-    const [hovered, setHovered] = useState(false)
-
-    function handleHover() {
-        setHovered(prevState => !prevState)
-    }
+    const [hovered, mouseRef] = useHover()
 
     function getClassName(i) {
         if(i % 5 === 0) {
@@ -46,9 +43,8 @@ function Image({className, img}) {
     
     return (
         <div 
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHover} 
             className={`${getClassName(className)} image-container`}
+            ref={mouseRef}
         >
            <img alt="product photos" src={img.url} className="image-grid" />
            {handleHeart()}
