@@ -1,7 +1,7 @@
 import {useState, useEffect, useRef} from "react"
 
 function useHover() {
-
+    const mouseRef = useRef(null)
     const [hovered, setHovered] = useState(false)
 
     function enter() {
