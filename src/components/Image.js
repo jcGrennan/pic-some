@@ -6,6 +6,13 @@ import useHover from "../hooks/useHover"
 function Image({className, img}) {
 
     const [hovered, mouseRef] = useHover()
+    
+    const {
+        toggleFavorite, 
+        cartItems, 
+        addToCart, 
+        removeFromCart
+    } = useContext(Context)
 
     function getClassName(i) {
         if(i % 5 === 0) {
@@ -16,12 +23,6 @@ function Image({className, img}) {
         }
     } 
 
-    const {
-        toggleFavorite, 
-        cartItems, 
-        addToCart, 
-        removeFromCart
-    } = useContext(Context)
 
     function handleHeart() {
         const handleClick = () => toggleFavorite(img.id)
