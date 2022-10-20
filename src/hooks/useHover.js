@@ -28,4 +28,4 @@ function useHover() {
     return [hovered, mouseRef]
 }
 
-export default Hover
+export default useHover
