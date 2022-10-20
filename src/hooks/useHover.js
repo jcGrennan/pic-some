@@ -22,8 +22,10 @@ function useHover() {
             mouseRef.current.removeEventListener("mouseenter", enter)
             mouseRef.current.removeEventListener("mouseleave", leave)
         }
-        
+
     },[])
+
+    return [hovered, mouseRef]
 }
 
 export default Hover
