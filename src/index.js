@@ -8,7 +8,7 @@ import App from './App';
 import {ContextProvider} from './Context';
 
 /* rendering the App wrapped in the Context Provider so it can pass data anywhere in the app,
-    and the Browser Router so the user can route between pages.*/
+and the Browser Router so the user can route between pages.*/
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ContextProvider>
