@@ -1,5 +1,6 @@
 /* A custom hook to handle hovering. Not necessary but shows 
-possibility of custom hook use for potentially larger websites*/
+possibility of custom hook use for potentially larger websites.
+Only somewhat reduces code repitition in this case*/
 
 // importing react hooks. Ref will be used to determine what elements get event listeners
 import {useState, useEffect, useRef} from "react"
