@@ -1,12 +1,18 @@
+// importing context hook, my context, PropTypes dependency, and custom hook
 import {useContext} from "react"
 import {Context} from "../Context"
 import PropTypes from "prop-types"
 import useHover from "../hooks/useHover"
 
+/* composing the Image component with a parameter object
+className and img param object properties are coming
+from the mapping taking place in the Photos page */
 function Image({className, img}) {
 
+    // pulling hovered and mouseRef from custom hook
     const [hovered, mouseRef] = useHover()
     
+    // pulling necessary states and functions from Context
     const {
         toggleFavorite, 
         cartItems, 
@@ -14,6 +20,7 @@ function Image({className, img}) {
         removeFromCart
     } = useContext(Context)
 
+    // declaring function to determine image classnames for photogrid styling
     function getClassName(i) {
         if(i % 5 === 0) {
             return "big"
@@ -23,7 +30,8 @@ function Image({className, img}) {
         }
     } 
 
-
+    /* declaring a function to display an empty heart when hovered 
+    and a filled heart all the time when favorited*/
     function handleHeart() {
         const handleClick = () => toggleFavorite(img.id)
         
@@ -34,6 +42,8 @@ function Image({className, img}) {
         }
     }
 
+    /* declaring a function to display a plus when hovered and a cart 
+    all the time when added to the cart */
     function handleCartIcon() {
         if(cartItems.some(item => item.id === img.id)) {
             return <i onClick={() => removeFromCart(img.id)} className="ri-shopping-cart-fill cart"></i>
@@ -42,6 +52,7 @@ function Image({className, img}) {
         }
     }
     
+    // composing jsx for Image component
     return (
         <div 
             className={`${getClassName(className)} image-container`}
@@ -54,6 +65,8 @@ function Image({className, img}) {
     )
 }
 
+/* using propTypes to ensure correct params are being passed,
+and all required params are being passed */
 Image.propTypes = {
     className: PropTypes.number,
     img: PropTypes.shape({
@@ -63,4 +76,5 @@ Image.propTypes = {
     })
 }
 
+// exporting Image component to be used in Photos page
 export default Image
